@@ -16,6 +16,19 @@
 #include <i2c.h>
 #include "khadas-mcu.h"
 
+#define CONFIG_PLATFORM_POWER_INIT
+#define CONFIG_VCCK_INIT_VOLTAGE    800
+#define CONFIG_VDDEE_INIT_VOLTAGE   880
+#define CONFIG_VDDEE_SLEEP_VOLTAGE  770
+
+#define CONFIG_BOOTLOADER_CONTROL_BLOCK
+
+/* PWM DM driver*/
+#define CONFIG_DM_PWM
+#define CONFIG_PWM_MESON
+
+#define CONFIG_EFUSE 1
+
 int mmc_get_env_dev(void)
 {
 	switch (meson_get_boot_device()) {
